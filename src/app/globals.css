@@ -1,0 +1,257 @@
+@import "@neynar/ui/styles";
+
+:root {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-sketch: var(--font-caveat), var(--font-patrick-hand), cursive;
+
+  /* SafeOrSus Wallet Risk Scanner Theme - Dark Cybersecurity */
+  --primary: #10b981;
+  --accent: #ef4444;
+  --background: #080b14;
+  --foreground: #f8fafc;
+
+  /* Secondary colors for the security dashboard aesthetic */
+  --color-safe: #10b981;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-text-secondary: #9ca3af;
+  --color-card-bg: #111827;
+  --color-card-border: #1f2937;
+
+  /* Sketch effect variables (minimal, not used) */
+  --sketch-roughness: 0px;
+  --sketch-shadow: none;
+  --sketch-border: none;
+}
+
+.dark {
+  --primary: #10b981;
+  --accent: #ef4444;
+  --background: #080b14;
+  --foreground: #f8fafc;
+  --color-safe: #10b981;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-text-secondary: #9ca3af;
+  --color-card-bg: #111827;
+  --color-card-border: #1f2937;
+}
+
+/* ============================================
+   HAND-DRAWN SKETCH EFFECT SYSTEM
+   ============================================ */
+
+/* Base sketch effect - disabled for clean modern UI */
+.sketch {
+  position: relative;
+  filter: none;
+  transform: rotate(0deg);
+}
+
+/* Wobbly box - clean modern container */
+.sketch-wobbly {
+  position: relative;
+  border: 1px solid var(--color-card-border);
+  filter: none;
+  background: var(--color-card-bg);
+  color: var(--foreground);
+}
+
+/* Sketch borders - clean borders for security dashboard */
+.sketch-border {
+  border: 1px solid var(--color-card-border);
+  border-radius: 6px;
+  box-shadow: none;
+  filter: none;
+}
+
+.sketch-border-heavy {
+  border: 2px solid var(--color-card-border);
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.1);
+  filter: none;
+}
+
+/* Sketch text - clean technical font */
+.sketch-text {
+  font-family: var(--font-sans);
+  letter-spacing: 0.02em;
+  color: var(--foreground);
+  filter: none;
+}
+
+/* Sketch button - clean interactive button */
+.sketch-button {
+  font-family: var(--font-sans);
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.2);
+  transition: all 0.2s ease;
+  position: relative;
+  background: var(--primary);
+  color: var(--background);
+  filter: none;
+  font-weight: 600;
+}
+
+.sketch-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.sketch-button:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.2);
+}
+
+/* Sketch card - clean dashboard card */
+.sketch-card {
+  position: relative;
+  border: 1px solid var(--color-card-border);
+  border-radius: 8px;
+  background: var(--color-card-bg);
+  color: var(--foreground);
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.05);
+  filter: none;
+}
+
+.sketch-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: none;
+  pointer-events: none;
+}
+
+/* Sketch input - clean form elements */
+.sketch-input {
+  font-family: var(--font-sans);
+  border: 1px solid var(--color-card-border);
+  border-radius: 6px;
+  background: rgba(17, 24, 39, 0.5);
+  color: var(--foreground);
+  padding: 0.75rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  filter: none;
+}
+
+.sketch-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow:
+    inset 0 1px 2px rgba(0, 0, 0, 0.2),
+    0 0 0 2px rgba(16, 185, 129, 0.15);
+}
+
+/* Sketch paper - dark terminal background */
+.sketch-paper {
+  background: var(--background);
+  background-size: 20px 20px;
+  background-color: var(--background);
+}
+
+/* Sketch border - clean border for layout containers */
+.sketch-border {
+  border: 1px solid var(--color-card-border);
+  background: var(--color-card-bg);
+}
+
+.sketch-border-b {
+  border-bottom: 1px solid var(--color-card-border);
+}
+
+.sketch-border-t {
+  border-top: 1px solid var(--color-card-border);
+}
+
+/* Sketch underline - clean underline */
+.sketch-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.sketch-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: var(--primary);
+  transform: scaleX(1);
+  opacity: 0.8;
+}
+
+/* Sketch highlight - warning highlight */
+.sketch-highlight {
+  position: relative;
+  display: inline;
+  background: linear-gradient(
+    to right,
+    rgba(245, 158, 11, 0.15),
+    rgba(245, 158, 11, 0.2),
+    rgba(245, 158, 11, 0.15)
+  );
+  padding: 0.1em 0.2em;
+  box-shadow:
+    2px 0 0 rgba(245, 158, 11, 0.15),
+    -2px 0 0 rgba(245, 158, 11, 0.15);
+  color: #fcd34d;
+}
+
+/* Sketch scribble - underline scribble effect */
+.sketch-scribble {
+  position: relative;
+}
+
+.sketch-scribble::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  bottom: -4px;
+  width: calc(100% + 4px);
+  height: 3px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    currentColor 0px,
+    currentColor 3px,
+    transparent 3px,
+    transparent 6px
+  );
+  opacity: 0.6;
+}
+
+/* Animation for sketch elements */
+@keyframes sketch-draw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.sketch-animate {
+  animation: sketch-draw 1s ease-out forwards;
+}
+
+/* Utility classes - clean design */
+.sketch-light {
+  filter: none;
+  opacity: 0.8;
+}
+
+.sketch-medium {
+  filter: none;
+  opacity: 0.9;
+}
+
+.sketch-heavy {
+  filter: none;
+}
+
+/* Pencil texture effect - disabled */
+.sketch-pencil {
+  filter: none;
+}

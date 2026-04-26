@@ -1,0 +1,13 @@
+{
+  "name": "SafeOrSus",
+  "shortName": "SafeOrSus",
+  "subtitle": "Wallet Risk Scanner",
+  "description": "Paste any wallet address to get a risk score, Etherscan labels, social analysis, and a plain-English explanation of whether it's safe or suspicious.",
+  "shortDescription": "Instant wallet risk scores for Farcaster",
+  "primaryCategory": "utility",
+  "tags": ["security", "wallet", "web3", "defi", "farcaster"],
+  "splashBackgroundColor": "#0a0a0f",
+  "tagline": "Know before you ape.",
+  "requiredChains": ["eip155:8453", "eip155:1"],
+  "shareButtonTitle": "Check This Wallet"
+}
